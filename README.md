@@ -12,7 +12,6 @@
 <details>
   <summary>Table of Contents</summary>
   <br/>
-  <ol>
     <li>
       <a href="#authors">Authors</a>
     </li>
@@ -22,7 +21,6 @@
     <li>
       <a href="#version-history">Version History</a>
     </li>
-  </ol>
 </details>
 <br/>
 
