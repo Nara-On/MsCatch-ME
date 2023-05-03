@@ -22,20 +22,21 @@
       <a href="#version-history">Version History</a>
     </li>
 </details>
-<br/>
+
 
 ## Authors
 Adrian Vargas Orellana - <a href="https://github.com/adriend1102">adriend1102</a> <br />
 Marina Bermúdez Granados - <a href="https://github.com/nara-on">nara-on</a> <br />
 Laia Rubio Castro - <a href="https://github.com/laiarubiio">laiarubiio</a> <br />
 Erik Becerra Moreno - <a href="https://github.com/ERlK2021">ERlK2021</a><br />
-Erik Villarreal Gallardo - <a href="https://github.com/LynxEko">LynxEko</a> <br />
+Erik Villarreal Gallardo - <a href="https://github.com/LynxEko">LynxEko</a> 
+
 
 ## About the Project
 ![product-screenshot]
 
-Building a Robot that can play games with children, like tag, hide and seek and red light - green light. The selection of the games will be done with a button when the robot says a specific game.
-<br />
+Ms. Catch Multi Experience (M.E.) is a Robot that can play games with children, like tag, hide and seek and red light - green light. The selection of the games will be done with a button when the robot says a specific game. In this repository stores the documentation, code and 3D models related to its development.
+
 
 ## Version History
 * 0.1
