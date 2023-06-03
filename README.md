@@ -5,7 +5,7 @@
   
   ![logo-screenshot]
   
-  <h3 align="center">MsCatch-ME</h3>
+  <h3 align="center">Ms. Catch-M.E.</h3>
   <p align="center">
     Arduino automated robot than plays games with you
     <br />
@@ -42,6 +42,26 @@ Ms. Catch Multi Experience (M.E.) is a Robot that can play games with children, 
 
 
 ## Version History
+
+* 2.0
+    * <i>communication.py</i> added
+    * <i>initButton.py</i> added
+    * <i>catch_communication.h</i> added
+    * <i>motor_control_serial.ino</i> added
+
+<br />
+
+* 1.1
+    * <i>initAudio.py</i> added
+    * <i>modulePicaPared.py</i> updated
+* 1.0
+    * <i>initCam.py</i> added
+    * <i>moduleDeteccion.py</i> added
+    * <i>modulePicaPared.py</i> added
+    * <i>master.py</i> added
+
+<br />
+
 * 0.2
     * Software Arquitecture Diagrams added
 * 0.1
