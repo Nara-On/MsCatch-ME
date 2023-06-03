@@ -2,19 +2,19 @@
 Module para Seleccion de Juegos
 
 """
-
+import time
 from modulePicaPared import *
 
 
 if __name__ == '__main__':
     
     # Preparacion seleccion juegos
-    
+    time.sleep(20)
     # Audio
     pygame.mixer.init()
-	soundInicio = pygame.mixer.Sound('')
-    
-    # Boton
+	soundInicio = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/HolaSoyMsCatchMe.wav')
+	soundPicaPared = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/Pulsa1PicaPared.wav')
+	# Boton
 	BUTTON_PIN = 15
 	GPIO.setwarnings(False)
 	GPIO.setmode(GPIO.BOARD)
@@ -25,14 +25,16 @@ if __name__ == '__main__':
 		buttonPressed = True
 		
 	GPIO.add_event_detect(BUTTON_PIN, GPIO.RISING, callback=buttonCallback)
-    
-    
-    while True:
-        # Audio seleccion juegos
-        playing = soundInicio.play()
-        while playing.get_busy():
-            pygame.time.delay(100)
+	# Audio seleccion juegos
+    playing = soundInicio.play()
+    while playing.get_busy():
+        pygame.time.delay(100)
+    playing = soundPicaPared.play()
+    while playing.get_busy():
+        pygame.time.delay(100)
         
+    while True:
+
         if buttonPressed: # Comprovar boton pulsado 1 vez
             picaPared()
         else:

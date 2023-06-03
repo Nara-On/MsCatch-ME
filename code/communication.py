@@ -11,7 +11,7 @@ class ArduinoCommunication:
         if os.name == 'nt':
             port = 'COM3'           # port on windows in my pc (Erik V)
         elif os.name == 'posix':
-            port = '/dev/ttyACM1'   # port on linux by default might have to change this
+            port = '/dev/ttyACM0'   # port on linux by default might have to change this
         else:
             # this shouldn't happen as os.name can only have 'nt' or 'posix' as values
             raise Exception(f"Current OS is not supported, detected OS: {os.name}")
@@ -71,9 +71,11 @@ if __name__ == '__main__':
     time.sleep(2)
 
     # prepare command
-    res = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_1, CatchProtocol.DIRECTIONS.STOP, 0)
+    res = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_1, CatchProtocol.DIRECTIONS.BACKWARD, 0)
+    res2 = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_2, CatchProtocol.DIRECTIONS.FORWARD, 0)
     print(list(res))
 
     ard_com.send_message(res)
+    ard_com.send_message(res2)
     ret_mess = ard_com.read_message()
     print(ret_mess)

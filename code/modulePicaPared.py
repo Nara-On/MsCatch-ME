@@ -12,19 +12,20 @@ import RPi.GPIO as GPIO
 from moduleDeteccion import *
 from communication import *
 
+pygame.mixer.init()
 
 def picaPared():
 
 	# Preparar juego
 
 	# Audio
-	pygame.mixer.init()
-	soundInicio = pygame.mixer.Sound('')
-	sound123picapared = pygame.mixer.Sound('audios/123picapared.ogg')
-	sound123ya = pygame.mixer.Sound('audios/123ya.ogg')
-	soundPillado = pygame.mixer.Sound('')
-	soundWin = pygame.mixer.Sound('')
-	soundLose = pygame.mixer.Sound('')
+ 	#soundInicio = pygame.mixer.Sound("/home/pi/Desktop/MsCatchME/code/audios/123ya.ogg")
+	soundInicio = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/PicaPared.wav')
+	sound123picapared = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/123picapared.ogg')
+	sound123ya = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/123ya.ogg')
+	soundPillado = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/PilladoHasPerdido.wav')
+	soundWin = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/MeHasPillado.wav')
+	#soundLose = pygame.mixer.Sound('audios/PilladoHasPerdido.ogg')
 	
 	# Boton
 	BUTTON_PIN = 15
@@ -40,15 +41,15 @@ def picaPared():
 	
 	# Ruedas
 	ard_com = ArduinoCommunication()
-    	time.sleep(2)
+	time.sleep(2)
 	
-	comandoGiroM1 = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_1, CatchProtocol.DIRECTIONS.DIRECTIONS_FORWARD, 200)
-	comandoGiroM2 = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_2, CatchProtocol.DIRECTIONS.DIRECTIONS_FORWARD, 200)
+	comandoGiroM1 = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_1, CatchProtocol.DIRECTIONS.BACKWARD, 255)
+	comandoGiroM2 = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_2, CatchProtocol.DIRECTIONS.FORWARD, 255)
 	comandoStopM1 = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_1, CatchProtocol.DIRECTIONS.STOP, 0)
 	comandoStopM2 = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_2, CatchProtocol.DIRECTIONS.STOP, 0)
 	
 	# Deteccion de personas
-	th = 25
+	th = 10
 
 	
 	# Audio comienzo juego
@@ -60,7 +61,7 @@ def picaPared():
 		#Girar 180
 		ard_com.send_message(comandoGiroM1)
 		ard_com.send_message(comandoGiroM2)
-		time.sleep(5)
+		time.sleep(2)
 		ard_com.send_message(comandoStopM1)
 		ard_com.send_message(comandoStopM2)
 
@@ -69,15 +70,15 @@ def picaPared():
 		while playing.get_busy():
 			pygame.time.delay(100)
 
-		# Esperar entre 0 a 5 segundos
-		t = random.randrange(0, 5, 1)
-		print("Esperando " + str(t) + " segundos")
-		time.sleep(t)
+		# Esperar entre 0 a 2 segundos
+		#t = random.randrange(0, 2, 1)
+		#print("Esperando " + str(t) + " segundos")
+		time.sleep(1)
 
 		#Girar 180
 		ard_com.send_message(comandoGiroM1)
 		ard_com.send_message(comandoGiroM2)
-		time.sleep(5)
+		time.sleep(2)
 		ard_com.send_message(comandoStopM1)
 		ard_com.send_message(comandoStopM2)
 
@@ -97,22 +98,24 @@ def picaPared():
 			break
 
 	
-	if mov == True:
+	if mov == False:
 		playing = soundWin.play()
 		while playing.get_busy():
 			pygame.time.delay(100)
+	"""
 	else:
 		playing = soundLose.play()
 		while playing.get_busy():
 			pygame.time.delay(100)
-	
+	"""
 	GPIO.cleanup()
 
 	return 0
 
 
 if __name__ == '__main__':
+	time.sleep(20)
 	
-    # Juego Pica Pared
-    ret = picaPared()
-    print(ret)
+	# Juego Pica Pared
+	ret = picaPared()
+	print(ret)
