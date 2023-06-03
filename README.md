@@ -2,6 +2,9 @@
 
 <br />
 <div align="center">
+  
+  ![logo-screenshot]
+  
   <h3 align="center">MsCatch-ME</h3>
   <p align="center">
     Arduino automated robot than plays games with you
@@ -48,3 +51,4 @@ Ms. Catch Multi Experience (M.E.) is a Robot that can play games with children, 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/Nara-On/MsCatch-ME/graphs/contributors
 [product-screenshot]: documentation/images/MsCatchME.jpeg
+[logo-screenshot]: documentation/images/logoMsCatchMe.png
