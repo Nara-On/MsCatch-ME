@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 
 # 4	LED
 # 22  BUTTON
-BUTTON_PIN = 22
+BUTTON_PIN = 15
 
 def button_callback(channel):
     print("Button was pushed!")

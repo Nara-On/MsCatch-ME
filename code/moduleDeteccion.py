@@ -14,7 +14,7 @@ def deteccionMov(thMax):
 	cam = cv2.VideoCapture(0)
 	imgList = []
 	
-	n = random.randrange(50, 100, 1)
+	n = random.randrange(25, 50, 1)
 	i = 0
 	
 	_, start = cam.read()

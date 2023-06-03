@@ -13,13 +13,14 @@ from moduleDeteccion import *
 from communication import *
 
 pygame.mixer.init()
+buttonPressed = False
 
 def picaPared():
 
 	# Preparar juego
 
 	# Audio
- 	#soundInicio = pygame.mixer.Sound("/home/pi/Desktop/MsCatchME/code/audios/123ya.ogg")
+	#soundInicio = pygame.mixer.Sound("/home/pi/Desktop/MsCatchME/code/audios/123ya.ogg")
 	soundInicio = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/PicaPared.wav')
 	sound123picapared = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/123picapared.ogg')
 	sound123ya = pygame.mixer.Sound('/home/pi/Desktop/MsCatchME/code/audios/123ya.ogg')
@@ -33,8 +34,11 @@ def picaPared():
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 	
+	global buttonPressed
 	buttonPressed = False
 	def buttonCallback(channel):
+		global buttonPressed
+		print("Button is pressed")
 		buttonPressed = True
 		
 	GPIO.add_event_detect(BUTTON_PIN, GPIO.RISING, callback=buttonCallback)
@@ -49,7 +53,7 @@ def picaPared():
 	comandoStopM2 = CatchProtocol.command_to_binary(CatchProtocol.COMMAND.SET_MOTOR_2, CatchProtocol.DIRECTIONS.STOP, 0)
 	
 	# Deteccion de personas
-	th = 10
+	th = 5
 
 	
 	# Audio comienzo juego
@@ -62,6 +66,8 @@ def picaPared():
 		ard_com.send_message(comandoGiroM1)
 		ard_com.send_message(comandoGiroM2)
 		time.sleep(2)
+		if buttonPressed:
+			break
 		ard_com.send_message(comandoStopM1)
 		ard_com.send_message(comandoStopM2)
 
@@ -69,16 +75,22 @@ def picaPared():
 		playing = sound123picapared.play()
 		while playing.get_busy():
 			pygame.time.delay(100)
+		if buttonPressed:
+			break
 
 		# Esperar entre 0 a 2 segundos
 		#t = random.randrange(0, 2, 1)
 		#print("Esperando " + str(t) + " segundos")
 		time.sleep(1)
+		if buttonPressed:
+			break
 
 		#Girar 180
 		ard_com.send_message(comandoGiroM1)
 		ard_com.send_message(comandoGiroM2)
 		time.sleep(2)
+		if buttonPressed:
+			break
 		ard_com.send_message(comandoStopM1)
 		ard_com.send_message(comandoStopM2)
 
@@ -86,6 +98,8 @@ def picaPared():
 		playing = sound123ya.play()
 		while playing.get_busy():
 			pygame.time.delay(100)
+		if buttonPressed:
+			break
 
 		# Deteccion Movimiento
 		mov = deteccionMov(th)
@@ -98,7 +112,7 @@ def picaPared():
 			break
 
 	
-	if mov == False:
+	if buttonPressed:
 		playing = soundWin.play()
 		while playing.get_busy():
 			pygame.time.delay(100)
@@ -114,7 +128,7 @@ def picaPared():
 
 
 if __name__ == '__main__':
-	time.sleep(20)
+	time.sleep(0.5)
 	
 	# Juego Pica Pared
 	ret = picaPared()
