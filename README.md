@@ -48,11 +48,14 @@ Ms. Catch Multi Experience (M.E.) is a Robot that can play games with children, 
 
 ## Version History
 
+* 2.1
+    * Photos added
 * 2.0
     * <i>communication.py</i> added
     * <i>initButton.py</i> added
     * <i>catch_communication.h</i> added
     * <i>motor_control_serial.ino</i> added
+    * * <i>modulePicaPared.py</i> updated
 
 <br />
 
@@ -71,7 +74,7 @@ Ms. Catch Multi Experience (M.E.) is a Robot that can play games with children, 
     * Software Arquitecture Diagrams added
 * 0.1
     * Initial Release
- 
+
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/Nara-On/MsCatch-ME/graphs/contributors
