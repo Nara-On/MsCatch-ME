@@ -2,9 +2,7 @@
 
 <br />
 <div align="center">
-  
-  ![logo-screenshot]
-  
+  <img src="https://github.com/Nara-On/MsCatch-ME/blob/main/documentation/images/logoMsCatchMe.png" width="500">
   <h3 align="center">Ms. Catch-M.E.</h3>
   <p align="center">
     Arduino automated robot than plays games with you
@@ -36,7 +34,14 @@ Erik Villarreal Gallardo - <a href="https://github.com/LynxEko">LynxEko</a>
 
 
 ## About the Project
-![product-screenshot]
+<div align="center">
+  <img src="https://github.com/Nara-On/MsCatch-ME/blob/main/documentation/images/finalDesignMsCatchME.jpeg" width="189">
+  <img src="https://github.com/Nara-On/MsCatch-ME/blob/main/documentation/images/photoMsCatchME_3.JPG" width="200">
+  <img src="https://github.com/Nara-On/MsCatch-ME/blob/main/documentation/images/photoMsCatchME_12.JPG" width="200">
+  <img src="https://github.com/Nara-On/MsCatch-ME/blob/main/documentation/images/photoMsCatchME_11.JPG" width="200">
+</div>
+
+<br />
 
 Ms. Catch Multi Experience (M.E.) is a Robot that can play games with children, like tag, hide and seek and red light - green light. The selection of the games will be done with a button when the robot says a specific game. In this repository stores the documentation, code and 3D models related to its development.
 
@@ -70,5 +75,3 @@ Ms. Catch Multi Experience (M.E.) is a Robot that can play games with children, 
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/Nara-On/MsCatch-ME/graphs/contributors
-[product-screenshot]: documentation/images/MsCatchME.jpeg
-[logo-screenshot]: documentation/images/logoMsCatchMe.png
