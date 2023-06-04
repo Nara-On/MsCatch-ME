@@ -50,6 +50,7 @@ Ms. Catch Multi Experience (M.E.) is a Robot that can play games with children, 
 
 * 2.1
     * Photos added
+    * Schematics updated
 * 2.0
     * <i>communication.py</i> added
     * <i>initButton.py</i> added
