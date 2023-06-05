@@ -20,8 +20,8 @@ def picaPared():
 	# Audio
 	pygame.mixer.init()
 	soundInicio = pygame.mixer.Sound('')
-	sound123picapared = pygame.mixer.Sound('/home/pi/Desktop/code/audio/123picapared.ogg')
-	sound123ya = pygame.mixer.Sound('/home/pi/Desktop/code/audio/123ya.ogg')
+	sound123picapared = pygame.mixer.Sound('audios/123picapared.ogg')
+	sound123ya = pygame.mixer.Sound('audios/123ya.ogg')
 	soundPillado = pygame.mixer.Sound('')
 	soundWin = pygame.mixer.Sound('')
 	soundLose = pygame.mixer.Sound('')
