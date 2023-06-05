@@ -11,7 +11,7 @@ class ArduinoCommunication:
         if os.name == 'nt':
             port = 'COM3'           # port on windows in my pc (Erik V)
         elif os.name == 'posix':
-            port = '/dev/ttyACM1'   # port on linux by default might have to change this
+            port = '/dev/ttyACM0'   # port on linux by default might have to change this
         else:
             # this shouldn't happen as os.name can only have 'nt' or 'posix' as values
             raise Exception(f"Current OS is not supported, detected OS: {os.name}")
