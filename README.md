@@ -7,6 +7,8 @@
   <p align="center">
     Arduino automated robot than plays games with you
     <br />
+    https://youtu.be/ik0ufMCvqKk
+    <br />
     <br />
 </div>
 
