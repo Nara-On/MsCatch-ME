@@ -38,6 +38,7 @@ Laia Rubio Castro - <a href="https://github.com/laiarubiio">laiarubiio</a> <br /
 Erik Becerra Moreno - <a href="https://github.com/ERlK2021">ERlK2021</a><br />
 Erik Villarreal Gallardo - <a href="https://github.com/LynxEko">LynxEko</a> 
 
+<br >
 
 ## About the Project
 <div align="center">
@@ -51,6 +52,7 @@ Erik Villarreal Gallardo - <a href="https://github.com/LynxEko">LynxEko</a>
 
 Ms. Catch Multi Experience (M.E.) is a Robot that can play games with children, like tag, hide and seek and red light - green light. The selection of the games will be done with a button when the robot says a specific game. In this repository stores the documentation, code and 3D models related to its development.
 
+<br />
 
 ## Version History
 
